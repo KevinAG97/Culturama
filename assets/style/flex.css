@@ -1,0 +1,114 @@
+/* Cabeçalho */
+
+.menu {
+  display: flex; /* quando aplicamos o display flex, transformamos o elemento em um flex container */
+  justify-content: space-evenly; /* alinha os itens ao longo do eixo principal (horizontal) com espaçamento igual entre eles */
+  align-items: center; /* alinha os itens ao longo do eixo transversal (vertical) no centro */
+  flex-wrap: wrap; /* permite que os itens se movam para a próxima linha se não houver espaço suficiente na linha atual */
+  column-gap: 33px; /* define o espaçamento entre as colunas */
+}
+
+/* Categorias */
+
+.categorias__lista {
+  display: flex;
+  flex-direction: column; /* organiza os itens em uma coluna */
+  row-gap: 0.5rem; /* define o espaçamento entre as linhas */
+}
+
+/* Destaques */
+
+.destaques {
+  display: flex;
+  align-items: center; /* alinha os itens ao longo do eixo transversal (vertical) no centro */
+  column-gap: 10px;
+}
+
+.destaques__barra {
+  flex-grow: 1; /* faz com que a barra ocupe o espaço restante disponível no flex container, tornando a tela responsiva */
+}
+
+/* Eventos */
+
+.eventos__lista {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+  justify-content: center; /* alinha os itens ao longo do eixo principal (horizontal) no centro */
+}
+
+.eventos__item {
+  flex-grow: 1;
+  max-width: 400px; /* define a largura máxima dos itens */
+}
+
+/* AGENDA */
+
+.agenda__lista {
+  display: flex;
+  flex-wrap: wrap; /* permite que os itens se movam para a próxima linha se não houver espaço suficiente na linha atual */
+  row-gap: 1rem;
+  column-gap: 1.5rem; /* define o espaçamento entre as colunas */
+  justify-content: center; /* alinha os itens ao longo do eixo principal (horizontal) no centro */
+}
+
+.agenda__item {
+  flex-grow: 1; /* faz com que os itens ocupem o espaço restante disponível no flex container, tornando a tela responsiva */
+}
+
+.rodape {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* alinha os itens ao longo do eixo principal (horizontal) com espaçamento igual entre eles dinamicamente, tornando responsivo*/
+}
+
+.rodape__logo {
+  align-self: end; /* alinha o logo ao longo do eixo transversal (vertical) no final */
+}
+
+
+@media (min-width: 720px) {
+  /* Cabeçalho */
+  .menu {
+    column-gap: 75px; /* aumenta o espaçamento entre as colunas em telas maiores */
+  }
+  /* Categorias */
+  .categorias__lista {
+    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha se não houver espaço suficiente na linha atual */
+    column-gap: 1.5rem; /* define o espaçamento entre as colunas */
+    row-gap: 1rem; /* define o espaçamento entre as linhas */
+  }
+  /* Eventos */
+  .eventos__lista {
+    justify-content: end;
+  }
+
+  
+  }
+
+
+
+@media (min-width: 1440px) {
+  /* Cabeçalho */
+  .menu {
+    column-gap: 105px; /* aumenta o espaçamento entre as colunas em telas ainda maiores */
+    flex-wrap: nowrap; /* impede que os itens se movam para a próxima linha, mantendo todos na mesma linha */
+
+  }
+  .menu__item:nth-child(1) {
+    order:1 /* altera a ordem do primeiro item para que ele apareça primeiro na linha */
+  }
+  .menu__item:nth-child(2) {
+    order:3 /* altera a ordem do segundo item para que ele apareça terceiro na linha */
+  }
+  .menu__item:nth-child(3) {
+    order:4 /* altera a ordem do terceiro item para que ele apareça tquarto na linha */
+  }
+  .menu__item:nth-child(4) {
+    order:5 /* altera a ordem do quarto item para que ele apareça quinto na linha */
+  }
+  .menu__item:nth-child(5) {
+    order:2 /* altera a ordem do quinto item para que ele apareça segundo na linha */
+  }
+}
